@@ -117,4 +117,4 @@ If automatically generating a new repository does not work, follow these steps i
 Q: The management requested a new feature where in the fictional e-commerce app must have a "featured products" section.
 How would you go about implementing this feature in the backend?
 
-A: _Put your answer here_
+A: Given that a product model has a rating from 1 to 5 and has a number of items sold, to get the products that I can feature, I would only get the products that have a 4-5 rating and the number of items sold. 
