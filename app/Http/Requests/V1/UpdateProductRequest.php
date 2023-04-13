@@ -23,10 +23,21 @@ class UpdateProductRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => ['required', 'max:255'],
-            'description' => ['required'],
-            'price' => ['required', 'numeric', 'decimal:0,2']
-        ];
+        $method = $this->method();
+        
+        if($method == 'PUT'){
+            return [
+                'name' => ['required', 'max:255'],
+                'description' => ['required'],
+                'price' => ['required', 'numeric', 'decimal:0,2']
+            ];
+        }else{
+            return [
+                'name' => ['sometimes','required', 'max:255'],
+                'description' => ['sometimes','required'],
+                'price' => ['sometimes','required', 'numeric', 'decimal:0,2']
+            ];
+        }
+        
     }
 }
